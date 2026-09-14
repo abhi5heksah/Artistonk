@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #e5e7eb;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: #f8f9fa;
+    color: #111827;
+    font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* High contrast text selection - never white on white! */
+  ::selection {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+
+  ::-moz-selection {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f8f9fa;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #da291c;
+  }
+}
+
+/* Explicit brand color utilities to guarantee rendering */
+.bg-brand-red {
+  background-color: #da291c !important;
+}
+
+.text-brand-red {
+  color: #da291c !important;
+}
+
+.border-brand-red {
+  border-color: #da291c !important;
+}
+
+.bg-brand-red-soft {
+  background-color: #fef2f2 !important;
+}
+
+.border-brand-red-border {
+  border-color: #fecaca !important;
+}
+
+@layer components {
+  /* Telemetry Cards */
+  .glass-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05), 0px 1px 2px 0px rgba(0, 0, 0, 0.03);
+  }
+
+  .glass-card-hover {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+  }
+
+  .glass-card-hover:hover {
+    border-color: #d1d5db;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Signature Precision Buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    background-color: #da291c !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 1px solid #da291c;
+    transition: all 0.15s ease;
+    box-shadow: 0px 2px 8px 0px rgba(218, 41, 28, 0.25);
+  }
+
+  .btn-primary:hover {
+    background-color: #9d2211 !important;
+    border-color: #9d2211 !important;
+  }
+
+  .btn-primary:active {
+    background-color: #b01e0a !important;
+    transform: translateY(1px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 22px;
+    background-color: #ffffff;
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 1px solid #d1d5db;
+    transition: all 0.15s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: #111827;
+    background-color: #f9fafb;
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #6b7280;
+    border-radius: 2px;
+    transition: all 0.15s ease;
+  }
+
+  .btn-ghost:hover {
+    color: #111827;
+    background-color: #f3f4f6;
+  }
+
+  /* Inputs & Selects */
+  .input-field {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 2px;
+    font-size: 0.875rem;
+    color: #111827;
+    transition: all 0.15s ease;
+  }
+
+  .input-field::placeholder {
+    color: #9ca3af;
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: #da291c;
+    box-shadow: 0 0 0 1px #da291c;
+  }
+
+  .select-field {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 2px;
+    font-size: 0.875rem;
+    color: #111827;
+    cursor: pointer;
+    appearance: none;
+    padding-left: 0.875rem;
+    transition: all 0.15s ease;
+  }
+
+  .select-field:focus {
+    outline: none;
+    border-color: #da291c;
+    box-shadow: 0 0 0 1px #da291c;
+  }
+
+  /* Status pulse dots */
+  .status-dot-open {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #da291c;
+    display: inline-block;
+  }
+
+  .status-dot-progress {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #0284c7;
+    display: inline-block;
+  }
+
+  .status-dot-resolved {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #059669;
+    display: inline-block;
+  }
+
+  /* Skeleton animation */
+  .skeleton-line {
+    background: linear-gradient(
+      90deg,
+      #f3f4f6 25%,
+      #e5e7eb 50%,
+      #f3f4f6 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
